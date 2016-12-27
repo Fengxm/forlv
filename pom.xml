@@ -24,6 +24,13 @@
 
     <!--Webmagic-->
     <webmagic.version>0.5.3</webmagic.version>
+    <!--Spring-->
+    <spring.version>4.2.5.RELEASE</spring.version>
+    <spring-data-jpa.version>1.9.4.RELEASE</spring-data-jpa.version>
+    <!-- Mysql -->
+    <mysql.version>5.1.6</mysql.version>
+    <!--Hibernate-->
+    <hibernate.version>5.1.0.Final</hibernate.version>
   </properties>
 
   <dependencies>
@@ -44,6 +51,55 @@
       <artifactId>webmagic-extension</artifactId>
       <version>${webmagic.version}</version>
     </dependency>
+
+    <!--Spring依赖-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>${spring-data-jpa.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Mysql -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
+    </dependency>
+
+    <!--Hibernate依赖-->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>forlv</finalName>
