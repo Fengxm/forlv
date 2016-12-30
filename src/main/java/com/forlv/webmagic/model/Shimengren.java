@@ -11,45 +11,46 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
+ * 拾梦人活动抽取模型
  * Created by xiaoming on 2016/12/26.
  */
 
 @Entity
-@Table(name="ACTIVITY_INFO")
+@Table(name = "ACTIVITY_INFO")
 @TargetUrl("http://shimengren.com/activity/operation/view-\\d+.jhtml")
 @HelpUrl("http://shimengren.com/activity/operation/search.jhtml\\?se_day_type=0&act_category=&act_topics=&pageNumber=\\d+")
-public class Shimengren implements AfterExtractor{
+public class Shimengren implements AfterExtractor {
 
     @Id
-    @Column(name="ID")
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="URL")
+    @Column(name = "URL")
     @ExtractByUrl
     private String url;
 
-    @Column(name="TITLE")
+    @Column(name = "TITLE")
     @ExtractBy("/html/body/div[5]/div/div/div[1]/h1/text()")
     private String title;
 
-    @Column(name="COST")
+    @Column(name = "COST")
     @ExtractBy("/html/body/div[6]/div[1]/div[2]/div/ul[1]/li[2]/p/font/text()")
     private String cost;
 
-    @Column(name="TRAVEL_TIME")
+    @Column(name = "TRAVEL_TIME")
     @ExtractBy("/html/body/div[6]/div[1]/div[2]/div/ul[1]/li[3]/p/text()")
     private String travel_time;
 
-    @Column(name="JOIN_NUM")
+    @Column(name = "JOIN_NUM")
     @ExtractBy("/html/body/div[6]/div[1]/div[2]/div/ul[1]/li[5]/p/text()")
     private String join_num;
 
-    @Column(name="GATHER_ADDRESS")
+    @Column(name = "GATHER_ADDRESS")
     @ExtractBy("/html/body/div[6]/div[1]/div[2]/div/ul[1]/li[4]/p[1]/text()")
     private String gather_address;
 
-    @Column(name="CREATE_DATE")
+    @Column(name = "CREATE_DATE")
     private Date createDate;
 
 

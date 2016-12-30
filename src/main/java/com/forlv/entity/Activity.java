@@ -1,46 +1,33 @@
-package com.forlv.webmagic.model;
+package com.forlv.entity;
 
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.model.AfterExtractor;
-import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.ExtractByUrl;
-import us.codecraft.webmagic.model.annotation.HelpUrl;
-import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 import javax.persistence.*;
 
 /**
- * 拾忆旅行活动抽取模型
- * Created by xiaoming on 2016/12/26.
+ * 旅行活动实体类
+ * Created by xiaoming on 2016/12/27.
  */
 @Entity
-@Table(name = "SHIYILVXING_INFO")
-@TargetUrl("http://www.shiyilvxing.com/activity/detail\\?id=\\d+")
-@HelpUrl("http://www.shiyilvxing.com/activity\\?pageIndex=\\d+")
-public class Shiyilvxing implements AfterExtractor {
+@Table(name = "ACTIVITY_INFO")
+public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private int id;
     @Column(name = "TITLE")
-    @ExtractBy(value = "//div[@class='detail_time_attr_join_gray']/h4[@class='text-left']/text()")
     private String title;
     @Column(name = "URL")
     @ExtractByUrl
     private String url;
     @Column(name = "ACTIVITY_TIME")
-    @ExtractBy(value = "//div[@class='detail_Time']/div[@class='detail_Time_t']/p/text()")
     private String activityTime;
     @Column(name = "APPLICATION_PERIOD")
-    @ExtractBy(value = "//div[@class='detail_Time']/div[@class='detail_Time_b']/p/text()")
     private String applicationPeriod;
     @Column(name = "ADDRESS")
-    @ExtractBy(value = "//div[@class='detail_Attr']/div[@class='dt_address_item']/div[@class='detail_Attr_K']/p/text()")
     private String address;
     @Column(name = "JOIN_NUM_LIMIT")
-    @ExtractBy(value = "//div[@class='detail_Joinnum']/div[@class='detail_Joinnum_b']/p/text()")
     private String joinNumLimit;
-
 
     public int getId() {
         return id;
@@ -100,7 +87,7 @@ public class Shiyilvxing implements AfterExtractor {
 
     @Override
     public String toString() {
-        return "Shiyilvxing{" +
+        return "Activity{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", url='" + url + '\'' +
@@ -109,10 +96,5 @@ public class Shiyilvxing implements AfterExtractor {
                 ", address='" + address + '\'' +
                 ", joinNumLimit='" + joinNumLimit + '\'' +
                 '}';
-    }
-
-    @Override
-    public void afterProcess(Page page) {
-
     }
 }

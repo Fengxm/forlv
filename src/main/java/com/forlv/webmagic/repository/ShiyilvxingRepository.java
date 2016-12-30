@@ -1,7 +1,7 @@
 package com.forlv.webmagic.repository;
 
 import com.forlv.webmagic.model.Shiyilvxing;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ShiyilvxingRepository extends CrudRepository<Shiyilvxing, Integer>{
+public interface ShiyilvxingRepository extends JpaRepository<Shiyilvxing, Integer> {
 
 }

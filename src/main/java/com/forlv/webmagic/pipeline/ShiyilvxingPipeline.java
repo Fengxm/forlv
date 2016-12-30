@@ -12,7 +12,7 @@ import us.codecraft.webmagic.pipeline.PageModelPipeline;
  */
 
 @Component("shiyilvxingPipeline")
-public class ShiyilvxingPipeline implements PageModelPipeline<Shiyilvxing>{
+public class ShiyilvxingPipeline implements PageModelPipeline<Shiyilvxing> {
 
     @Autowired
     private ShiyilvxingRepository shiyilvxingRepository;

@@ -1,8 +1,6 @@
 package com.forlv.webmagic.crawler;
 
 import com.forlv.webmagic.model.Shiyilvxing;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -22,8 +20,8 @@ public class ShiyilvxingCrawler {
     @Resource
     private PageModelPipeline shiyilvxingPipeline;
 
-    public void crawl(){
-        OOSpider.create(Site.me().setTimeOut(1000),shiyilvxingPipeline,Shiyilvxing.class).addUrl("http://www.shiyilvxing.com/activity/index").thread(3).run();
+    public void crawl() {
+        OOSpider.create(Site.me().setTimeOut(1000), shiyilvxingPipeline, Shiyilvxing.class).addUrl("http://www.shiyilvxing.com/activity/index").thread(3).run();
     }
 
     public static void main(String[] args) {

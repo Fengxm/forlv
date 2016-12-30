@@ -1,107 +1,122 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.forlv</groupId>
-  <artifactId>forlv</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>forlv Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.forlv</groupId>
+    <artifactId>forlv</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>forlv Maven Webapp</name>
+    <url>http://maven.apache.org</url>
 
-  <properties>
+    <properties>
 
-    <project.encoding>UTF-8</project.encoding>
-    <project.jdk>1.7</project.jdk>
+        <project.encoding>UTF-8</project.encoding>
+        <project.jdk>1.7</project.jdk>
 
-    <!--输出和源码编码相关信息-->
-    <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+        <!--输出和源码编码相关信息-->
+        <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
 
-    <!--源码和编译相关版本信息-->
-    <project.build.version>${project.jdk}</project.build.version>
-    <maven.compiler.source>${project.jdk}</maven.compiler.source>
-    <maven.compiler.target>${project.jdk}</maven.compiler.target>
+        <!--源码和编译相关版本信息-->
+        <project.build.version>${project.jdk}</project.build.version>
+        <maven.compiler.source>${project.jdk}</maven.compiler.source>
+        <maven.compiler.target>${project.jdk}</maven.compiler.target>
 
-    <!--Webmagic-->
-    <webmagic.version>0.5.3</webmagic.version>
-    <!--Spring-->
-    <spring.version>4.2.5.RELEASE</spring.version>
-    <spring-data-jpa.version>1.9.4.RELEASE</spring-data-jpa.version>
-    <!-- Mysql -->
-    <mysql.version>5.1.6</mysql.version>
-    <!--Hibernate-->
-    <hibernate.version>5.1.0.Final</hibernate.version>
-  </properties>
+        <!--Webmagic-->
+        <webmagic.version>0.5.3</webmagic.version>
+        <!--Spring-->
+        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring-data-jpa.version>1.9.4.RELEASE</spring-data-jpa.version>
+        <!-- Mysql -->
+        <mysql.version>5.1.6</mysql.version>
+        <!--Hibernate-->
+        <hibernate.version>5.1.0.Final</hibernate.version>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
+        <jetty-version>9.2.20.v20161216</jetty-version>
+    </properties>
 
-    <dependency>
-      <groupId>us.codecraft</groupId>
-      <artifactId>webmagic-core</artifactId>
-      <version>${webmagic.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>us.codecraft</groupId>
-      <artifactId>webmagic-extension</artifactId>
-      <version>${webmagic.version}</version>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
-    <!--Spring依赖-->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-jpa</artifactId>
-      <version>${spring-data-jpa.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>webmagic-core</artifactId>
+            <version>${webmagic.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>webmagic-extension</artifactId>
+            <version>${webmagic.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <!--Spring依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
-    <!-- Mysql -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>${mysql.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <!--Hibernate依赖-->
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>${hibernate.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>${hibernate.version}</version>
-    </dependency>
+        <!-- Mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
 
-  </dependencies>
-  <build>
-    <finalName>forlv</finalName>
-  </build>
+        <!--Hibernate依赖-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.4</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>forlv</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty-version}</version>
+            </plugin>
+        </plugins>
+
+    </build>
 </project>

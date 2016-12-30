@@ -12,7 +12,7 @@ import us.codecraft.webmagic.pipeline.PageModelPipeline;
  */
 
 @Component("blogPipeline")
-public class BlogPipeline implements PageModelPipeline<Blog>{
+public class BlogPipeline implements PageModelPipeline<Blog> {
 
     @Autowired
     private BlogRepository blogRepository;

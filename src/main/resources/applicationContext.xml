@@ -15,9 +15,9 @@
 
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.forlv.webmagic"/>
-    
-    <jpa:repositories base-package="com.forlv.webmagic.repository"/>
+    <context:component-scan base-package="com.forlv"/>
+
+    <jpa:repositories base-package="com.forlv"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

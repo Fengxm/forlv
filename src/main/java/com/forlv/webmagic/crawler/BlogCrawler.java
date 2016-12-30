@@ -1,8 +1,6 @@
 package com.forlv.webmagic.crawler;
 
 import com.forlv.webmagic.model.Blog;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -22,8 +20,8 @@ public class BlogCrawler {
     @Resource
     private PageModelPipeline blogPipeline;
 
-    public void crawl(){
-        OOSpider.create(Site.me().setTimeOut(1000),blogPipeline,Blog.class).addUrl("https://www.oschina.net/blog").thread(3).run();
+    public void crawl() {
+        OOSpider.create(Site.me().setTimeOut(1000), blogPipeline, Blog.class).addUrl("https://www.oschina.net/blog").thread(3).run();
     }
 
     public static void main(String[] args) {

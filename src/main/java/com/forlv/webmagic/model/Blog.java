@@ -9,25 +9,26 @@ import us.codecraft.webmagic.model.annotation.TargetUrl;
 import javax.persistence.*;
 
 /**
+ * 博客抽取模型
  * Created by xiaoming on 2016/12/26.
  */
 
 @Entity
-@Table(name="BLOG_INFO")
+@Table(name = "BLOG_INFO")
 @TargetUrl("https://my.oschina.net/u/\\d+/blog/\\d+")
 @HelpUrl("https://my.oschina.net/u/\\d+/blog")
-public class Blog implements AfterExtractor{
+public class Blog implements AfterExtractor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name = "ID")
     private int id;
-    @Column(name="TITLE")
-    @ExtractBy(value = "//div[@class='title']/text()",notNull = true)
+    @Column(name = "TITLE")
+    @ExtractBy(value = "//div[@class='title']/text()", notNull = true)
     private String title;
-    @Column(name="ABSTRACTS")
+    @Column(name = "ABSTRACTS")
     @ExtractBy(value = "//div[@class='blog-abstract']/text()")
     private String abstracts;
-    @Column(name="TAGS")
+    @Column(name = "TAGS")
     @ExtractBy(value = "//div[@class='tags']/span[@class='tag']/a/text()")
     private String tags;
 

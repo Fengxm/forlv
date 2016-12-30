@@ -12,7 +12,7 @@ import us.codecraft.webmagic.pipeline.PageModelPipeline;
  */
 
 @Component("shimengrenPipeline")
-public class ShimengrenPipeline implements PageModelPipeline<Shimengren>{
+public class ShimengrenPipeline implements PageModelPipeline<Shimengren> {
 
     @Autowired
     private ShimengrenRepository shimengrenRepository;
