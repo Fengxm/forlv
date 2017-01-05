@@ -27,7 +27,7 @@ public class ActivityService {
         return activityRepository.findAll();
     }
 
-    public List<Activity> findByTileLike(String wd) {
+    public List<Activity> findByTitleLike(String wd) {
         return activityRepository.findByTitleLike(wd);
     }
 

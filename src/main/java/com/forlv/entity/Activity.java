@@ -1,8 +1,10 @@
 package com.forlv.entity;
 
+import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.ExtractByUrl;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * 旅行活动实体类
@@ -12,22 +14,30 @@ import javax.persistence.*;
 @Table(name = "ACTIVITY_INFO")
 public class Activity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "URL")
+    private String url;
+
     @Column(name = "TITLE")
     private String title;
-    @Column(name = "URL")
-    @ExtractByUrl
-    private String url;
-    @Column(name = "ACTIVITY_TIME")
-    private String activityTime;
-    @Column(name = "APPLICATION_PERIOD")
-    private String applicationPeriod;
-    @Column(name = "ADDRESS")
-    private String address;
-    @Column(name = "JOIN_NUM_LIMIT")
-    private String joinNumLimit;
+
+    @Column(name = "COST")
+    private String cost;
+
+    @Column(name = "TRAVEL_TIME")
+    private String travel_time;
+
+    @Column(name = "JOIN_NUM")
+    private String join_num;
+
+    @Column(name = "GATHER_ADDRESS")
+    private String gather_address;
+
+    @Column(name = "CREATE_DATE")
+    private Date createDate;
 
     public int getId() {
         return id;
@@ -35,14 +45,6 @@ public class Activity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getUrl() {
@@ -53,48 +55,65 @@ public class Activity {
         this.url = url;
     }
 
-    public String getActivityTime() {
-        return activityTime;
+    public String getTitle() {
+        return title;
     }
 
-    public void setActivityTime(String activityTime) {
-        this.activityTime = activityTime;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getApplicationPeriod() {
-        return applicationPeriod;
+    public String getCost() {
+        return cost;
     }
 
-    public void setApplicationPeriod(String applicationPeriod) {
-        this.applicationPeriod = applicationPeriod;
+    public void setCost(String cost) {
+        this.cost = cost;
     }
 
-    public String getAddress() {
-        return address;
+    public String getTravel_time() {
+        return travel_time;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTravel_time(String travel_time) {
+        this.travel_time = travel_time;
     }
 
-    public String getJoinNumLimit() {
-        return joinNumLimit;
+    public String getJoin_num() {
+        return join_num;
     }
 
-    public void setJoinNumLimit(String joinNumLimit) {
-        this.joinNumLimit = joinNumLimit;
+    public void setJoin_num(String join_num) {
+        this.join_num = join_num;
+    }
+
+    public String getGather_address() {
+        return gather_address;
+    }
+
+    public void setGather_address(String gather_address) {
+        this.gather_address = gather_address;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     @Override
     public String toString() {
         return "Activity{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
                 ", url='" + url + '\'' +
-                ", activityTime='" + activityTime + '\'' +
-                ", applicationPeriod='" + applicationPeriod + '\'' +
-                ", address='" + address + '\'' +
-                ", joinNumLimit='" + joinNumLimit + '\'' +
+                ", title='" + title + '\'' +
+                ", cost='" + cost + '\'' +
+                ", travel_time='" + travel_time + '\'' +
+                ", join_num='" + join_num + '\'' +
+                ", gather_address='" + gather_address + '\'' +
+                ", createDate=" + createDate +
                 '}';
     }
 }
